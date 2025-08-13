@@ -17,4 +17,17 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: hello-artifact
-        path: hello.txt
+        path: hello.txt 
+      
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hello-artifact
+          path: ./artifacts
+
+      - name: Display artifact
+        run: cat ./artifacts/hello.txt
+
+  
