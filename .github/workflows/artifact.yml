@@ -23,7 +23,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:  
-      - uses: actions/upload-artifact@v4
+      - name: Download text file
+        uses: actions/upload-artifact@v4
         with:
           name: hello-artifact
           path: ./artifacts
